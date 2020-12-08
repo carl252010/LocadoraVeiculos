@@ -1,0 +1,120 @@
+<div class="container">
+  <form [formGroup]="formulario" (ngSubmit)="salvar()">
+    <div class="form-group">
+     <label class="col-sm-2"for="marca">Marca</label>
+     <input type="text" id="marca" name="marca" formControlName="marca" required />
+      <span
+       *ngIf="
+          formulario.get('marca').errors?.required &&
+          formulario.get('marca').touched
+        "
+        >Campo Obrigatório
+      </span>
+</div>
+    <div>
+      <label for="modelo">Modelo</label>
+      <input type="text" id="modelo" name="modelo" formControlName="modelo" required />
+      <span
+        *ngIf="
+          formulario.get('modelo').errors?.required &&
+          formulario.get('modelo').touched
+        "
+        >Campo Obrigatório
+      </span>
+    </div>
+    <div>
+      <label for="ano">Ano</label>
+        <input type="number" id="ano" name="ano" formControlName="ano" required />
+      <span
+        *ngIf="
+          formulario.get('ano').errors?.required &&
+          formulario.get('ano').touched
+        "
+        >Campo Obrigatório
+      </span>
+      <span
+      *ngIf="
+        formulario.get('ano').errors?.min &&
+        formulario.get('ano').touched
+      "
+      >Ano deve ser maior que '0' no formato 'yyyy'
+    </span>
+    </div>
+    <div>
+      <label for="cor">Cor</label>
+        <input type="text" id="cor" name="cor" formControlName="cor" />
+      <span
+        *ngIf="
+          formulario.get('cor').errors?.required &&
+          formulario.get('cor').touched
+        "
+        >Campo Obrigatório
+      </span>
+    </div>
+    <div>
+      <div>
+      <label for="categoria">Categoria:</label>
+    </div>
+      Hatch
+      <input
+        type="radio"
+        id="categoria"
+        name="categoria"
+        value="Hatch"
+        formControlName="categoria"
+        required
+      />
+      Sedan
+      <input
+        type="radio"
+        name="categoria"
+        value="Sedan"
+        formControlName="categoria"
+        required
+      />
+     <span
+        *ngIf="
+          formulario.get('categoria').errors?.required &&
+          formulario.get('categoria').touched
+        "
+        >Campo Obrigatório
+      </span>
+    </div>
+    <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-8">
+      <!-- <button type="submit" >Salvar</button> -->
+      <button type="submit" [disabled]="formulario.invalid">Salvar</button>
+    </div>
+    <div>&nbsp;&nbsp;</div>
+    <div><button type="list" (click) = "listar()" class="btn btn-default btn-sm">Carregar registros<span class="glyphicon glyphicon-edit"> 
+    </span></button></div>
+  </div>
+  </form>
+</div>
+<div>
+    <table class = "table table-striped table-bordered">
+        <tr style = "background: lightblue;">
+              <th>ID</th>
+              <th>MARCA</th>
+              <th>MODELO</th>
+              <th>ANO</th>
+              <th>COR</th>
+              <th>CATEGORIA</th>
+              <th>ACOES</th>
+        </tr>
+        <tr *ngFor = "let veiculo of lista">
+               <td>{{veiculo.id}}</td>
+               <td>{{veiculo.marca}}</td>
+               <td>{{veiculo.modelo}}</td>
+               <td>{{veiculo.ano}}</td>
+               <td>{{veiculo.cor}}</td>
+               <td>{{veiculo.categoria}}</td>
+            <td>
+                <button type= "update" (click) = "atualizarCadastros(veiculo.id)" class="btn btn-default btn-sm">Update<span class="glyphicon glyphicon-edit"></span></button>
+          |&nbsp;
+                <button type= "delete" (click) = "deleteVeiculo(veiculo.id)" class="btn btn-default btn-sm">Delete<span class="glyphicon glyphicon-trash"></span></button>
+            </td>
+        </tr>
+    </table>
+</div>
+  
