@@ -54,6 +54,18 @@ export class CadastraVeiculosComponent implements OnInit {
       });
     }
   }
+  atualizar(){
+    //console.log(this.formulario)
+    if(this.formulario.valid){
+      this.servico.atualizarCadastros(this.formulario.getRawValue())
+      .subscribe(respostaPositiva => {
+        alert('atualizado com sucesso!');
+        console.log(respostaPositiva);
+        this.formulario.reset();
+        this.servico.listar();
+      });
+    }
+  }
   }
 
 

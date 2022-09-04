@@ -13,6 +13,10 @@ export class VeiculosService {
     return this.http.post(this. baseUrl + '/add', veiculos)
   }
 
+  atualizarCadastros(veiculos: veiculos){
+    return this.http.put(this. baseUrl + '/put', veiculos)
+  }
+
   listar(){
     return this.http.get(this.baseUrl + '/list');
   }
