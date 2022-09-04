@@ -1,28 +1,34 @@
 # LocadoraVeiculos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 10.2.0.
 
-## Development server
+## Servidor de desenvolvimento
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+npm install -g @angular/cli
 
-## Code scaffolding
+npm start
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Execute `ng serve` para um servidor dev. Navegue até `http://localhost:4200/`. O aplicativo será recarregado automaticamente se você alterar qualquer um dos arquivos de origem.
 
-## Build
+## Estrutura de código
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Execute `ng generate component component-name` para gerar um novo componente. Você também pode usar `ng generate Directive|pipe|service|class|guard|interface|enum|module`.
 
-## Running unit tests
+## Construir
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Execute `ng build` para compilar o projeto. Os artefatos de construção serão armazenados no diretório `dist/`. Use o sinalizador `--prod` para uma compilação de produção.
 
-## Running end-to-end tests
+## Executando testes de unidade
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Execute `ng test` para executar os testes de unidade via [Karma](https://karma-runner.github.io).
 
-## Further help
+## Executando testes de ponta a ponta
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-"# LocadoraVeiculos" 
+Execute `ng e2e` para executar os testes de ponta a ponta via [Protractor](http://www.protractortest.org/).
+
+# Server utilizado nos testes: https://github.com/BruBertolini/Simple_CRUD_API
+
+## Mais ajuda
+
+Para obter mais ajuda sobre a CLI Angular, use `ng help` ou confira a página [Visão Geral da CLI Angular e Referência de Comando](https://angular.io/cli).
+"#LocadoraVeículos"
